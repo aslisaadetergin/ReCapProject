@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +17,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _cars = new List<Car>
             {
-                new Car{Id=1, BrandId=1, ColorId=1, DailyPrice=15, ModelYear=2019, Description="2019 model siyah bmv"},
-                new Car{Id=2, BrandId=2, ColorId=1, DailyPrice=20, ModelYear=2018, Description="2018 model siyah wolswogen"},
-                new Car{Id=3, BrandId=2, ColorId=2, DailyPrice=25, ModelYear=2019, Description="2019 model beyaz wolswogen"},
-                new Car{Id=4, BrandId=5, ColorId=1, DailyPrice=10, ModelYear=2016, Description="2016 model siyah citroen"},
-                new Car{Id=5, BrandId=7, ColorId=1, DailyPrice=50, ModelYear=2015, Description="2015 model siyah mercedes"},
+                new Car{Id=1, BrandId=1, ColorId="1", DailyPrice="15", ModelYear="2019", Description="2019 model siyah bmv"},
+                new Car{Id=2, BrandId=2, ColorId="1", DailyPrice="20", ModelYear="2018", Description="2018 model siyah wolswogen"},
+                new Car{Id=3, BrandId=2, ColorId="2", DailyPrice="25", ModelYear="2019", Description="2019 model beyaz wolswogen"},
+                new Car{Id=4, BrandId=5, ColorId="1", DailyPrice="10", ModelYear="2016", Description="2016 model siyah citroen"},
+                new Car{Id=5, BrandId=7, ColorId="1", DailyPrice="50", ModelYear="2015", Description="2015 model siyah mercedes"},
             };
         }
 
@@ -55,6 +56,11 @@ namespace DataAccess.Concrete.InMemory
         {
            //Tekrar düzenleme yapılacaktır
             return _cars;
+        }
+
+        public List<CarDetailDto> GetCarDetails()
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(Car car)
